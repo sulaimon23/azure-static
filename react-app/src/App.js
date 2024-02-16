@@ -1,16 +1,17 @@
-import React, { Component, lazy, Suspense } from 'react';
 import 'bulma/css/bulma.css';
-import './styles.scss';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import React, { Component, lazy, Suspense } from 'react';
 import { withRouter } from 'react-router';
-import { HeaderBar, NavBar, NotFound } from './components';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import About from './About';
+import { HeaderBar, NavBar, NotFound } from './components';
+import './styles.scss';
 
 const Products = withRouter(
-  lazy(() => import(/* webpackChunkName: "products" */ './products/Products'))
+  lazy(() => import(/* webpackChunkName: "products" */ './products/Products')),
 );
 
 class App extends Component {
+  //
   render() {
     return (
       <div>
